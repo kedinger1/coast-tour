@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coast to Coast Tour Photo Gallery - Browse photos from The 1916 Company's Rolex Certified Pre-Owned watch events.">
+  <title>Gallery | Coast to Coast Tour | The 1916 Company</title>
+  <link rel="icon" type="image/png" href="https://the1916company.imgix.net/logo/1916_black_circle_logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 36px;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="gallery.html" class="nav__link active">Gallery</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="nav__link" target="_blank">Shop CPO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Coast to Coast Tour</p>
+          <h1 class="section-header__title">Photo Gallery</h1>
+          <p class="section-header__description">Browse photos from our Rolex Certified Pre-Owned events across the country.</p>
+        </div>
+
+        <!-- Gallery Filter -->
+        <div class="gallery-filter" id="gallery-filter">
+          <button class="gallery-filter__btn active" data-event="all">All Events</button>
+          <!-- Dynamic buttons populated by JavaScript -->
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="main-gallery">
+          <!-- Content populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--dark">
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: var(--space-sm);">Experience the Tour</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-md); opacity: 0.9;">
+          Join us at an upcoming event and be part of the next photo gallery.
+        </p>
+        <a href="events.html?filter=upcoming" class="btn btn--primary">View Upcoming Events</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo"><img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 30px; filter: invert(1);"></div>
+      <div class="footer__links">
+        <a href="https://www.the1916company.com/" class="footer__link" target="_blank">Main Website</a>
+        <a href="https://www.the1916company.com/about-us/coast-to-coast-tour/" class="footer__link" target="_blank">Official Tour Page</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="footer__link" target="_blank">Shop CPO</a>
+      </div>
+      <p class="footer__copyright">&copy; 2025 The 1916 Company. All rights reserved. Rolex is a registered trademark of Rolex SA.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate filter buttons based on events with galleries
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterContainer = document.getElementById('gallery-filter');
+      const eventsWithGalleries = tourData.events.filter(e => e.gallery && e.gallery.length > 0);
+
+      eventsWithGalleries.forEach(event => {
+        const btn = document.createElement('button');
+        btn.className = 'gallery-filter__btn';
+        btn.dataset.event = event.id;
+        btn.textContent = event.location;
+        filterContainer.appendChild(btn);
+      });
+    });
+  </script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

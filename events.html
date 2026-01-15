@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coast to Coast Tour Events - View upcoming and past Rolex Certified Pre-Owned watch events by The 1916 Company.">
+  <title>Events | Coast to Coast Tour | The 1916 Company</title>
+  <link rel="icon" type="image/png" href="https://the1916company.imgix.net/logo/1916_black_circle_logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 36px;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="events.html" class="nav__link active">Events</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="nav__link" target="_blank">Shop CPO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--space-md);">
+          <p class="section-header__subtitle">Coast to Coast Tour</p>
+          <h1 class="section-header__title">Events</h1>
+          <p class="section-header__description">Explore our upcoming tour stops and look back at past events featuring over 100 Rolex Certified Pre-Owned watches.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Events</button>
+          <button class="filter-tab" data-filter="upcoming">Upcoming</button>
+          <button class="filter-tab" data-filter="completed">Past Events</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section class="section" style="padding-top: var(--space-md);">
+      <div class="container">
+        <div class="events-grid" id="events-grid">
+          <!-- Content populated by JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" style="display: none; text-align: center; padding: var(--space-xl) 0;">
+          <h3>No events found</h3>
+          <p style="color: var(--color-text-light);">Check back soon for more tour dates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--dark">
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: var(--space-sm);">Interested in Future Events?</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-md); opacity: 0.9;">
+          Register your interest on our main website to be the first to know about upcoming Coast to Coast Tour stops in your area.
+        </p>
+        <a href="https://www.the1916company.com/about-us/coast-to-coast-tour/" class="btn btn--primary" target="_blank">Register Interest</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo"><img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 30px; filter: invert(1);"></div>
+      <div class="footer__links">
+        <a href="https://www.the1916company.com/" class="footer__link" target="_blank">Main Website</a>
+        <a href="https://www.the1916company.com/about-us/coast-to-coast-tour/" class="footer__link" target="_blank">Official Tour Page</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="footer__link" target="_blank">Shop CPO</a>
+      </div>
+      <p class="footer__copyright">&copy; 2025 The 1916 Company. All rights reserved. Rolex is a registered trademark of Rolex SA.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

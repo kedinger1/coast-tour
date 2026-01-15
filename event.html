@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coast to Coast Tour Event Details - The 1916 Company">
+  <title>Event Details | Coast to Coast Tour | The 1916 Company</title>
+  <link rel="icon" type="image/png" href="https://the1916company.imgix.net/logo/1916_black_circle_logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 36px;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="nav__link" target="_blank">Shop CPO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="event-content">
+    <!-- Content populated by JavaScript -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo"><img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 30px; filter: invert(1);"></div>
+      <div class="footer__links">
+        <a href="https://www.the1916company.com/" class="footer__link" target="_blank">Main Website</a>
+        <a href="https://www.the1916company.com/about-us/coast-to-coast-tour/" class="footer__link" target="_blank">Official Tour Page</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="footer__link" target="_blank">Shop CPO</a>
+      </div>
+      <p class="footer__copyright">&copy; 2025 The 1916 Company. All rights reserved. Rolex is a registered trademark of Rolex SA.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const eventId = window.getUrlParam('id');
+      const content = document.getElementById('event-content');
+
+      if (!eventId) {
+        window.location.href = 'events.html';
+        return;
+      }
+
+      const event = TourUtils.getEventById(eventId);
+
+      if (!event) {
+        content.innerHTML = `
+          <section class="section" style="text-align: center; min-height: 50vh; display: flex; align-items: center; justify-content: center;">
+            <div class="container">
+              <h1>Event Not Found</h1>
+              <p style="margin-bottom: var(--space-md);">The event you're looking for doesn't exist.</p>
+              <a href="events.html" class="btn btn--dark">View All Events</a>
+            </div>
+          </section>
+        `;
+        return;
+      }
+
+      // Update page title
+      document.title = `${event.location} | Coast to Coast Tour | The 1916 Company`;
+
+      // Render event content
+      const badgeClass = event.status === 'upcoming' ? 'event-card__badge--upcoming' : '';
+      const badgeText = event.status === 'upcoming' ? 'Upcoming Event' : 'Past Event';
+
+      // Helper to get optimized thumbnail URL
+      function getThumbnailUrl(url) {
+        if (!url) return url;
+        if (url.includes('res.cloudinary.com')) {
+          return url.replace('/upload/', '/upload/q_auto:best,f_auto,w_600,h_450,c_fill,g_auto/');
+        }
+        if (url.includes('.imgix.net')) {
+          return url + (url.includes('?') ? '&' : '?') + 'w=600&h=450&fit=crop&q=80&auto=format';
+        }
+        return url;
+      }
+
+      let gallerySection = '';
+      if (event.gallery && event.gallery.length > 0) {
+        gallerySection = `
+          <section class="section section--accent">
+            <div class="container">
+              <div class="section-header">
+                <p class="section-header__subtitle">Look Back</p>
+                <h2 class="section-header__title">Event Gallery</h2>
+              </div>
+              <div class="gallery-grid" id="event-gallery">
+                ${event.gallery.map((img, index) => `
+                  <div class="gallery-item" data-index="${index}">
+                    <img src="${getThumbnailUrl(img.url)}" alt="${img.caption || 'Event photo'}" loading="lazy">
+                    ${img.caption ? `<div class="gallery-item__caption">${img.caption}</div>` : ''}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      let ctaSection = '';
+      if (event.status === 'upcoming') {
+        ctaSection = `
+          <section class="section section--dark">
+            <div class="container" style="text-align: center;">
+              <h2 style="margin-bottom: var(--space-sm);">Join Us in ${event.location}</h2>
+              <p style="max-width: 600px; margin: 0 auto var(--space-md); opacity: 0.9;">
+                Register your interest to receive updates about this event and secure your spot.
+              </p>
+              <a href="${event.registerUrl}" class="btn btn--primary" target="_blank">Register Interest</a>
+            </div>
+          </section>
+        `;
+      }
+
+      content.innerHTML = `
+        <!-- Event Hero -->
+        <section class="hero" style="min-height: 60vh;">
+          <img src="${event.heroImage}" alt="${event.location}" class="hero__background">
+          <div class="hero__content">
+            <span class="event-card__badge ${badgeClass}" style="display: inline-block; margin-bottom: var(--space-sm);">${badgeText}</span>
+            <h1 class="hero__title">${event.location}</h1>
+            <p class="hero__subtitle" style="font-size: 1.25rem; margin-top: var(--space-sm);">${TourUtils.formatDateRange(event.dates)}</p>
+          </div>
+        </section>
+
+        <!-- Event Details -->
+        <section class="section">
+          <div class="container">
+            <div class="featured-event" style="gap: var(--space-xl);">
+              <div>
+                <h2 style="margin-bottom: var(--space-md);">About This Event</h2>
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--space-md);">
+                  ${event.description}
+                </p>
+                <div style="margin-bottom: var(--space-md);">
+                  <p><strong>Venue:</strong> ${event.venue}</p>
+                  <p><strong>Location:</strong> ${event.address}</p>
+                </div>
+                ${event.status === 'upcoming' ? `
+                  <a href="${event.registerUrl}" class="btn btn--dark" target="_blank">Register Interest</a>
+                ` : `
+                  <a href="events.html?filter=upcoming" class="btn btn--dark">View Upcoming Events</a>
+                `}
+              </div>
+              <div>
+                <h3 style="margin-bottom: var(--space-md);">Event Highlights</h3>
+                <ul style="list-style: none;">
+                  ${event.highlights.map(highlight => `
+                    <li style="padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-sm);">
+                      <span style="color: var(--color-accent); font-size: 1.25rem;">&#10003;</span>
+                      ${highlight}
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        ${gallerySection}
+        ${ctaSection}
+
+        <!-- Back to Events -->
+        <section class="section">
+          <div class="container" style="text-align: center;">
+            <a href="events.html" class="btn">&larr; Back to All Events</a>
+          </div>
+        </section>
+      `;
+
+      // Initialize gallery lightbox if gallery exists
+      if (event.gallery && event.gallery.length > 0) {
+        initGalleryLightbox(event.gallery);
+      }
+    });
+  </script>
+</body>
+</html>

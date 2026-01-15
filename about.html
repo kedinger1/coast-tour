@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Coast to Coast Tour - Learn about The 1916 Company's traveling Rolex Certified Pre-Owned watch exhibition.">
+  <title>About | Coast to Coast Tour | The 1916 Company</title>
+  <link rel="icon" type="image/png" href="https://the1916company.imgix.net/logo/1916_black_circle_logo.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+    }
+
+    .experience-card {
+      padding: var(--space-lg);
+      border: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .experience-card__icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-sm);
+      opacity: 0.6;
+    }
+
+    .experience-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .experience-card__description {
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-card__image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto var(--space-md);
+      background-color: var(--color-accent);
+    }
+
+    .team-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .team-card__role {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-sm);
+    }
+
+    .team-card__description {
+      color: var(--color-text-light);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .about-intro__image {
+      aspect-ratio: 4/3;
+      background-color: var(--color-accent);
+      overflow: hidden;
+    }
+
+    .about-intro__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 1024px) {
+      .about-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 36px;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="about.html" class="nav__link active">About</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="nav__link" target="_blank">Shop CPO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" style="min-height: 50vh;">
+      <img src="https://res.cloudinary.com/dtuhrunyd/image/upload/v1765825995/Project%20Folders/2025/Rolex%20CPO/Rolex_Certified_Pre-Owned_Day-Date_118348-0156_02.jpg" alt="Rolex Certified Pre-Owned" class="hero__background" id="about-hero">
+      <div class="hero__content">
+        <img src="https://the1916company.imgix.net/CPOV7/logos/Rolex_Logo_CPO_Arabesque_white.svg" alt="Rolex Certified Pre-Owned" style="height: 60px; margin: 0 auto var(--space-sm); display: block;">
+        <p class="hero__subtitle">The 1916 Company</p>
+        <h1 class="hero__title">About the Tour</h1>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+      <div class="container">
+        <div class="about-intro">
+          <div>
+            <p class="section-header__subtitle" style="margin-bottom: var(--space-sm);">A Celebration</p>
+            <h2 style="margin-bottom: var(--space-md);">Rolex Certified Pre-Owned Watches</h2>
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: var(--space-md);">
+              The Coast to Coast Tour brings The 1916 Company's exceptional collection of Rolex Certified Pre-Owned watches directly to collectors and enthusiasts across the country.
+            </p>
+            <p style="line-height: 1.8; margin-bottom: var(--space-md);">
+              Each event features a curated selection of more than 100 collectible Rolex timepieces, including beloved discontinued models, distinctive stone dials, gem-set cases, unique configurations, and more. It's a rare opportunity to experience these exceptional watches in person.
+            </p>
+            <a href="https://www.the1916company.com/rolex-certified-pre-owned/program" class="btn btn--dark" target="_blank">Learn About Rolex CPO</a>
+          </div>
+          <div class="about-intro__image">
+            <img src="https://res.cloudinary.com/dtuhrunyd/image/upload/v1765815152/Project%20Folders/2025/Rolex%20CPO/Rolex_Certified_Pre-Owned_Cosmograph_Daytona_116508-0009_Datejust_16018_CHP_IX_JUB_01.jpg" alt="Rolex Certified Pre-Owned Collection" id="about-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Rolex CPO Program -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle" style="opacity: 0.7;">The Program</p>
+          <h2 class="section-header__title">Rolex Certified Pre-Owned</h2>
+          <p class="section-header__description" style="opacity: 0.9;">A groundbreaking program that brings transparency and trust to the pre-owned watch market.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); margin-top: var(--space-md);">
+          <div style="text-align: center; padding: var(--space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm); opacity: 0.8;">2022</div>
+            <h3 style="margin-bottom: var(--space-xs);">Program Launch</h3>
+            <p style="opacity: 0.8; margin: 0;">Launched by Rolex in December 2022, available exclusively through Official Rolex Retailers worldwide.</p>
+          </div>
+          <div style="text-align: center; padding: var(--space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm); opacity: 0.8;">100%</div>
+            <h3 style="margin-bottom: var(--space-xs);">Authenticated</h3>
+            <p style="opacity: 0.8; margin: 0;">Every watch returns to Rolex workshops for complete disassembly, verification, and servicing to factory standards.</p>
+          </div>
+          <div style="text-align: center; padding: var(--space-md);">
+            <div style="font-size: 2.5rem; margin-bottom: var(--space-sm); opacity: 0.8;">2 Year</div>
+            <h3 style="margin-bottom: var(--space-xs);">International Guarantee</h3>
+            <p style="opacity: 0.8; margin: 0;">Each certified watch comes with a two-year international guarantee and official Rolex certification.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.1);">
+          <p style="font-size: 1.125rem; max-width: 700px; margin: 0 auto var(--space-md); opacity: 0.9;">
+            The 1916 Company is one of the leading Rolex Certified Pre-Owned retailers in the United States, offering collectors access to authenticated timepieces with the assurance that only an Official Rolex Retailer can provide.
+          </p>
+          <a href="https://www.the1916company.com/rolex-certified-pre-owned/program" class="btn btn--primary" target="_blank">Learn More About the Program</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Experience -->
+    <section class="section section--accent">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">What to Expect</p>
+          <h2 class="section-header__title">The Experience</h2>
+          <p class="section-header__description">Each Coast to Coast Tour event offers a unique, personalized experience for watch enthusiasts.</p>
+        </div>
+        <div class="experience-grid" id="experience-grid">
+          <!-- Content populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Your Guides</p>
+          <h2 class="section-header__title">Meet the Team</h2>
+          <p class="section-header__description">Our expert team is dedicated to helping you find your perfect timepiece.</p>
+        </div>
+        <div class="team-grid" id="team-grid">
+          <!-- Content populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--dark">
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: var(--space-sm);">Ready to Experience the Tour?</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-md); opacity: 0.9;">
+          View our upcoming events and register your interest to secure your spot.
+        </p>
+        <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+          <a href="events.html?filter=upcoming" class="btn btn--primary">View Upcoming Events</a>
+          <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="btn" target="_blank">Shop CPO Online</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo"><img src="https://the1916company.imgix.net/pay/the-1916-company-logo.svg" alt="The 1916 Company" style="height: 30px; filter: invert(1);"></div>
+      <div class="footer__links">
+        <a href="https://www.the1916company.com/" class="footer__link" target="_blank">Main Website</a>
+        <a href="https://www.the1916company.com/about-us/coast-to-coast-tour/" class="footer__link" target="_blank">Official Tour Page</a>
+        <a href="https://www.the1916company.com/rolex-certified-pre-owned/our-selection" class="footer__link" target="_blank">Shop CPO</a>
+      </div>
+      <p class="footer__copyright">&copy; 2025 The 1916 Company. All rights reserved. Rolex is a registered trademark of Rolex SA.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate experience grid
+      const experienceGrid = document.getElementById('experience-grid');
+      const icons = ['&#128269;', '&#128172;', '&#128257;', '&#128188;']; // Search, Speech, Exchange, Briefcase
+
+      experienceGrid.innerHTML = tourData.experience.map((exp, index) => `
+        <div class="experience-card">
+          <div class="experience-card__icon">${icons[index] || '&#9733;'}</div>
+          <h3 class="experience-card__title">${exp.title}</h3>
+          <p class="experience-card__description">${exp.description}</p>
+        </div>
+      `).join('');
+
+      // Populate team grid
+      const teamGrid = document.getElementById('team-grid');
+      teamGrid.innerHTML = tourData.team.map(member => `
+        <div class="team-card">
+          <img src="${member.image}" alt="${member.name}" class="team-card__image">
+          <h3 class="team-card__name">${member.name}</h3>
+          <p class="team-card__role">${member.role}</p>
+          <p class="team-card__description">${member.description}</p>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
