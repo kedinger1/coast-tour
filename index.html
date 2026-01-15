@@ -132,9 +132,9 @@
             <h2 class="featured-event__location">${nextEvent.location}</h2>
             <p class="featured-event__dates">${TourUtils.formatDateRange(nextEvent.dates)}</p>
             <p>${nextEvent.description}</p>
-            <div style="margin-top: var(--space-md);">
+            <div style="margin-top: var(--space-md); display: flex; flex-wrap: wrap; gap: var(--space-sm);">
               <a href="event.html?id=${nextEvent.id}" class="btn btn--dark">Learn More</a>
-              <a href="${nextEvent.registerUrl}" class="btn" target="_blank" style="margin-left: var(--space-sm);">Register Interest</a>
+              <a href="${nextEvent.registerUrl}" class="btn" target="_blank">Register Interest</a>
             </div>
           </div>
         `;
